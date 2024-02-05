@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var inicio = ["unacadena", 3, 9, 1, 10, 500, 1, 10, true];
+
+        function ordenarNumeros(arr) {
+            var numeros = arr.filter(function (element) {
+                return typeof element === 'number';
+            });
+
+            var len = numeros.length;
+            for (var i = 0; i < len - 1; i++) {
+                for (var j = 0; j < len - 1; j++) {
+                    if (numeros[j] < numeros[j + 1]) {
+                        var temp = numeros[j];
+                        numeros[j] = numeros[j + 1];
+                        numeros[j + 1] = temp;
+                    }
+                }
+            }
+
+            return numeros;
+        }
+
+        var resultado = ordenarNumeros(inicio);
+
+        // Mostrar el resultado en el cuerpo del HTML
+        document.body.innerHTML += "<p>Números ordenados de mayor a menor: <br><br>" + resultado.join(', ') + "</p>";
+    </script>
+</body>
+</html>

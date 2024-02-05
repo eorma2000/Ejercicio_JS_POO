@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var numeroDeElementos = 10;
+
+        function calcularSerieFibonacci(n) {
+            var a = 0, b = 1;
+            var serie = [a, b];
+
+            for (var i = 2; i < n; i++) {
+                var next = a + b;
+                serie.push(next);
+                a = b;
+                b = next;
+            }
+
+            return serie;
+        }
+
+        var serieFibonacci = calcularSerieFibonacci(numeroDeElementos);
+
+        document.body.innerHTML += "<p>Serie Fibonacci hasta el elemento " + numeroDeElementos + ": <br><br>" + serieFibonacci.join(', ') + "</p>";
+    </script>
+</body>
+</html>
